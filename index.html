@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Play Snake Invaders! - RTÉ.ie</title>
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@rtedigital">
+    <meta name="twitter:creator" content="@rtedigital">
+    <meta name="twitter:title" content="Play Snake Invaders! #StPatricksDay">
+    <meta name="twitter:description" content="Happy St. Patrick's Day from RTÉ Digital">
+    <meta name="twitter:url" content="https://www.rte.ie/generic/snake-invaders/">
+    <meta name="twitter:image:src" content="https://www.rte.ie/generic/snake-invaders/img/splash.png">
+
+    <meta property="og:title" content="Snake Invaders! Happy St. Patrick's Day from RTÉ Digital" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://www.rte.ie/generic/snake-invaders/" />
+    <meta property="og:image" content="https://www.rte.ie/generic/snake-invaders/img/splash.png" />
+    <meta property="og:description" content="Play Snake Invaders! Free online game to celebrate St. Patrick's Day by RTÉ Digital"/>
+
+    <script type="text/javascript" src="vendor/phaser.min.js"></script>
+    <link rel="stylesheet" href="css/game.css"/>
+</head>
+
+<body>
+<img id="flip" src="img/rotate.jpg"/>
+<div id="game-container"></div>
+<div class="share-container">
+    <div class="inner">
+        <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.rte.ie/generic/snake-invaders/">
+            <img src="img/share-fb.png"/>
+        </a>
+        <a target="_blank" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.rte.ie%2Fgeneric%2Fsnake-invaders%2F&text=Happy St. Patrick's Day From @rtedigital">
+            <img src="img/share-t.png"/>
+        </a>
+    </div>
+</div>
+<p class="credits">Happy St. Patrick's Day from RTÉ Digital<br/><small>Background Midi files sequenced by Barry Taylor</small></p>
+
+
+<script src="js/helpers.js"></script>
+<script src="js/game.js?v=6"></script>
+
+<script>
+
+    function doOnOrientationChange()
+    {
+        switch (window.orientation) {
+            case 0:
+            case 180:
+                document.getElementById("flip").style.display = "block";
+                break;
+            case 90:
+            case -90:
+                //$("#gamecontainer").removeClass( "mobRotate" );
+                document.getElementById("flip").style.display = "none";
+                break;
+        }
+    }
+
+    window.onload = function(){
+
+
+        doOnOrientationChange();
+
+
+        window.addEventListener('orientationchange', doOnOrientationChange);
+
+    }
+
+</script>
+</body>
+</html>
